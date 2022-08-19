@@ -2,7 +2,7 @@ import './style.css';
 import renderHomepage from './modules/homepage/render-homepage.js';
 import renderMenupage from './modules/menupage/render-menupage.js';
 import headerComponent from './modules/homepage/header.js';
-
+import renderContactpage from './modules/contactpage/render-contactpage.js';
 function clearActive() {
   document
     .querySelectorAll('.nav-button')
@@ -32,6 +32,16 @@ document.addEventListener('DOMContentLoaded', function () {
     ) {
       renderHomepage();
 
+      clearActive();
+
+      e.target.closest('.nav-button').classList.add('active');
+    }
+
+    if (
+      e.target.closest('.nav-button').classList.contains('contact') &&
+      !e.target.closest('.nav-button').classList.contains('active')
+    ) {
+      renderContactpage();
       clearActive();
 
       e.target.closest('.nav-button').classList.add('active');
