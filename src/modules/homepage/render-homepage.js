@@ -3,6 +3,7 @@ import mainRamenComponent from './main-ramen.js';
 import openingHoursComponent from './opening-hours.js';
 
 function renderHomepage() {
+  document.body.replaceChildren(...document.querySelectorAll('header'));
   document.body.insertAdjacentHTML('beforeend', mainDescComponent);
   document.body.insertAdjacentElement('beforeend', mainRamenComponent);
   document.body.insertAdjacentHTML('beforeend', openingHoursComponent);
