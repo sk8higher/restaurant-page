@@ -1,8 +1,7 @@
 import headerComponent from '../homepage/header.js';
 
 function renderMenupage() {
-  document.body.insertAdjacentHTML('beforeend', headerComponent);
-  console.log(document.body.innerHTML);
+  document.body.replaceChildren(...document.querySelectorAll('header'));
 }
 
 export default renderMenupage;
